@@ -11,6 +11,43 @@ body{
     align-items: center;
     overflow: hidden;
 }
+h1{
+    font-family: 'Marck Script', cursive;
+    font-size: 2.5em;
+    color: #000;
+    margin: 15px;
+    width: 100%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 20px 20px 20px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+li{
+  display: flex;
+  align-items: center;
+  color: #3d4852;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  width: 780px;
+  border: 1px solid rgb(71, 71, 163);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  min-height: 20px;
+  transition: transform 500ms ease;
+}
+li:hover{
+    background: #cacaca;
+}
+p{
+    color: black;
+    font-size: 20px;
+}
 .container{
     width: 900px;
     height: 700px;
@@ -23,12 +60,32 @@ body{
     display: flex;
     flex-direction: column;
 }
-h1{
-    font-family: 'Marck Script', cursive;
-    font-size: 2.5em;
+.item{
+    width: 800px;
     color: #000;
-    margin: 15px;
-    width: 100%;
+    font-size: 20px;
+    padding: 10px 0px;
+    border: 1px solid rgb(71, 71, 163);
+    margin: 20px;
+    border-radius: 5px;
+    height: 30px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.done{
+    text-decoration: line-through;
+    color: #a1a1a1;
+    border-color: #a097a7;
+}
+.active{
+    background-color: rgb(111, 71, 163);
+    color: #fff;
+}
+.hightPriority{
+    color: rgb(93, 16, 156);
+    font-weight: bold;
 }
 #text-field {
     width: 100%;
@@ -81,51 +138,6 @@ h1{
     transform: transition 500ms ease;
     cursor: not-allowed;
 }
-.item{
-    width: 800px;
-    color: #000;
-    font-size: 20px;
-    padding: 10px 0px;
-    border: 1px solid rgb(71, 71, 163);
-    margin: 20px;
-    border-radius: 5px;
-    height: 30px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 20px 20px 20px;
-    max-height: 600px;
-    overflow-y: auto;
-}
-
-li{
-  display: flex;
-  align-items: center;
-  color: #3d4852;
-  font-size: 25px;
-  cursor: pointer;
-  transition: all 0.1s ease-in;
-  width: 780px;
-  border: 1px solid rgb(71, 71, 163);
-  padding: 10px;
-  margin: 10px;
-  border-radius: 5px;
-  min-height: 20px;
-  transition: transform 500ms ease;
-}
-.done{
-    text-decoration: line-through;
-    color: #a1a1a1;
-    border-color: #a097a7;
-}
-li:hover{
-    background: #cacaca;
-}
 #newItem button:hover,
 #button-create:hover,
 #button-cancel:hover,
@@ -158,15 +170,6 @@ li:hover{
     transform: transition 500ms ease;
 }
 
-p{
-    color: black;
-    font-size: 20px;
-}
-
-.active{
-    background-color: rgb(111, 71, 163);
-    color: #fff;
-}
 #priority-button{
     border: 1px solid rgb(71, 71, 163);
     margin-left: 10px;
@@ -175,10 +178,6 @@ p{
     transform: transition 500ms ease;
     font-size: 16px;
     padding-top: 5px;
-}
-.hightPriority{
-    color: rgb(93, 16, 156);
-    font-weight: bold;
 }
 #character{
     margin: 0;
