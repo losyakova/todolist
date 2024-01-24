@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <div id="header">
+            <h1>Список дел</h1>
+            <button v-if="editing"  @click="doEdit()" id="button-cancel" type="button">Отменить</button>
+            <button v-else  @click="doEdit()" id="button-create" type="button">Создать</button>
+        </div>
+        <div id="newItem" v-if="editing">
+            <input id="text-field" type="text" maxlength="100" v-model="nameItem" placeholder="Что нужно сделать...">
+            <p id="character">{{characterCount}}/100</p>
+            <div id="priority-button" :class="priority ? 'active' : '' " @click="setPriority()">Высокий приоритет</div>
+            <button type="button" v-bind:disabled="nameItem.length==0" @click="add()"> Добавить </button>
+        </div>
+        <p v-if="items.length==0">Список дел пуст...</p>
+
+        <ul id="item-container">
+            <li :class="{done: item.done, hightPriority: item.priority && !item.done}"  v-for="item in reversedItems" :key="item.id" @click="done(item)">
+                {{item.nameItem}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="app.js"></script>
+</body>
+</html>
